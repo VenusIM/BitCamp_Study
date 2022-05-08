@@ -37,11 +37,9 @@ Implements, Polymorphism, Overloading, Overriding, Encapsulation, Modifier, Asso
 
 <br/>
 
-<div align=center>
-  
 [**Velog**](https://velog.io/@yim3370/series/BitCamp-%EC%88%98%EB%A3%8C)
-  
-</div>
+
+<br/>
 
 ### #Refactoring 1
 - Framework를 적용 x (AS-IS)
