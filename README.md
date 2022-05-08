@@ -44,7 +44,7 @@ Implements, Polymorphism, Overloading, Overriding, Encapsulation, Modifier, Asso
 </div>
 
 ### #Refactoring 1
-- Framework를 적용 x
+- Framework를 적용 x (AS-IS)
 - Dispatcher Servlet, Handler Mapping, View Resolver, Connection 등을 직접 구현
 
 ### #Refactoring 2
@@ -54,7 +54,7 @@ Implements, Polymorphism, Overloading, Overriding, Encapsulation, Modifier, Asso
 - Expression Languag & Jsp Standard Tag Library 적용
 
 ### #Refactoring 4
-- Spring Framework, MyBatis
+- Spring Framework (TO-BE), MyBatis
 - JUnit을 이용한 테스트 주도 프로그래밍
 
 ### #Refactoring 5
