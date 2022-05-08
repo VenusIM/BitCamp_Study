@@ -48,7 +48,7 @@ Implements, Polymorphism, Overloading, Overriding, Encapsulation, Modifier, Asso
 - Dispatcher Servlet, Handler Mapping, View Resolver, Connection 등을 직접 구현
 
 ### #Refactoring 2
-- 하나의 Servlet 코드를 Controller & View로 분리
+- Page Navigation, 효율적인 Query
 
 ### #Refactoring 3
 - Expression Languag & Jsp Standard Tag Library 적용
