@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+			"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+			
+<mapper namespace="CartMapper">
+  <resultMap type="cart" id="cartSelectMap">
+  	<result property="cartNo" column="CART_NO" jdbcType="NUMERIC" />
+  	<result property="cartUser.userId" column="USER_ID" jdbcType="VARCHAR" />
+  	<result property="cartProduct.prodNo" column="PROD_NO" jdbcType="NUMERIC" />
+  	<result property="amount" column="AMOUNT" jdbcType="NUMERIC" />
+  	<result property="cartProduct.prodName" column="PROD_NAME" jdbcType="VARCHAR" />
+  	<result property="cartProduct.price" column="PRICE" jdbcType="NUMERIC" />  	
+  	<result property="cartProduct.fileName" column="IMAGE_FILE" jdbcType="VARCHAR" />  	
+  </resultMap>
+
+  
+  <insert id="insertCart" parameterType="cart">
+  	INSERT INTO cart 
+  	VALUES (seq_cart_cart_no.nextval, 
+  			#{cartUser.userId}, 
+  			#{cartProduct.prodNo}, 
+  			#{amount})
+  </insert>
+    
+  <select id="getCart" parameterType="map" resultMap="cartSelectMap"> 
+  	SELECT * 
+  	FROM cart
+  	WHERE prod_no = #{prodNo} 
+  	  AND user_id = #{userId}
+  </select>
+  
+  <select id="getCartList" parameterType="string" resultMap="cartSelectMap">
+  	SELECT c.cart_no, c.user_id, c.prod_no, c.amount, p.prod_name, p.price, p.image_file
+   	  FROM cart c, product p
+  	 WHERE user_id = #{value}
+  	   AND c.prod_no = p.prod_no
+  </select>
+  
+  <update id="updateCart" parameterType="cart">
+  	UPDATE cart 
+  	   SET amount = #{amount}
+  	 WHERE prod_no = #{cartProduct.prodNo} 
+  	   AND user_id = #{cartUser.userId}
+  </update>
+  
+  <delete id="deleteCart" parameterType="cart">
+  	DELETE FROM cart
+  	 WHERE prod_no = #{cartProduct.prodNo} 
+  	   AND user_id = #{cartUser.userId} 
+  </delete>
+  
+  <select id="getTotalCount" parameterType="string" resultType="int">
+  	SELECT COUNT(*) 
+  	FROM cart
+  	WHERE user_id = #{value}
+  </select>
+  
+</mapper>
