@@ -37,7 +37,7 @@ Implements, Polymorphism, Overloading, Overriding, Encapsulation, Modifier, Asso
 
 <br/>
 
-[**Velog**](https://velog.io/@yim3370/series/BitCamp-%EC%88%98%EB%A3%8C)
+[**블로그**](https://dev-junhee.tistory.com/category/Back%20-%20End)
 
 <br/>
 
